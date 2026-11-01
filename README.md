@@ -10,6 +10,7 @@ They are the same skills as [claude-design-skills](https://github.com/YourFuture
 |---|---|---|
 | Business, Enterprise or Edu | The skill zips | These plans have ChatGPT Skills, which read the same SKILL.md format. |
 | Free, Plus or Pro | The Custom GPT kits | No Skills on these plans yet, so each skill comes as GPT instructions plus one knowledge file. |
+| Codex CLI or OpenClaw | The `skills` folder | Both read SKILL.md skills from `~/.agents/skills`, on your computer or a server. |
 
 ### Way 1: upload a skill (Business, Enterprise, Edu)
 
@@ -30,6 +31,18 @@ OpenAI's guide to Skills: https://academy.openai.com/public/resources/skills
 5. For `ui-ux-pro-max`, also turn on Code Interpreter.
 
 Making a GPT needs a paid plan. A Project works the same way: paste the instructions into the Project instructions and add the knowledge file as a Project file.
+
+### Way 3: Codex CLI or OpenClaw
+
+Both load skills from `~/.agents/skills`, so one copy serves both:
+
+```bash
+git clone https://github.com/YourFutureSiteDev/chatgpt-design-skills.git
+mkdir -p ~/.agents/skills
+cp -R chatgpt-design-skills/skills/* ~/.agents/skills/
+```
+
+Codex picks them up by itself (restart it if one does not show). Type `/skills` to see them, or `$hallmark` to call one by name. OpenClaw loads them into new sessions.
 
 ## What is in it
 
